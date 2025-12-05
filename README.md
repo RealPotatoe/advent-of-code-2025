@@ -6,20 +6,20 @@ This repo uses **Nix Flakes** to manage dependencies. Each day is a contained en
 
 ## Language Roadmap
 
-| Day    | Language                |
-| :----- | :---------------------- |
-| **01** | 🐍 **Python**            |
-| **02** | 🐹 **Go**                |
-| **03** | 🦀 **Rust**              |
-| **04** | λ **Haskell**           |
-| **05** | 🦕 **TypeScript** (Deno) |
-| **06** | **Kotlin**              |
-| **07** | #️⃣ **C#**                |
-| **08** | ➕ **C++**               |
-| **09** | 💧 **Elixir**            |
-| **10** | ⚡ **Zig**               |
-| **11** | 🐫 **OCaml**             |
-| **12** | 🌙 **Lua**               |
+| Day    | Language      |
+| :----- | :------------ |
+| **01** | 🐍 **Python**  |
+| **02** | 🐹 **Go**      |
+| **03** | 🦀 **Rust**    |
+| **04** | λ **Haskell** |
+| **05** | **Forth**     |
+| **06** | **Kotlin**    |
+| **07** | #️⃣ **C#**      |
+| **08** | ➕ **C++**     |
+| **09** | 💧 **Elixir**  |
+| **10** | ⚡ **Zig**     |
+| **11** | 🐫 **OCaml**   |
+| **12** | 🌙 **Lua**     |
 
 ## Running Solutions
 
