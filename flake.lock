@@ -16,6 +16,22 @@
       },
       "parent": []
     },
+    "day02": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "path": "./day02",
+        "type": "path"
+      },
+      "original": {
+        "path": "./day02",
+        "type": "path"
+      },
+      "parent": []
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1764794580,
@@ -35,6 +51,7 @@
     "root": {
       "inputs": {
         "day01": "day01",
+        "day02": "day02",
         "nixpkgs": "nixpkgs"
       }
     }
