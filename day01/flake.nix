@@ -1,37 +1,37 @@
 {
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+  description = "Advent of Code Day 01 - Python";
 
-  outputs = { self, nixpkgs }:
-  let
-    systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-    forAllSystems = nixpkgs.lib.genAttrs systems;
-  in {
-    packages = forAllSystems (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      default = pkgs.writeShellScriptBin "day-solution" ''
-        ${pkgs.python3}/bin/python3 ${./main.py} "$@"
-      '';
-    });
-
-    apps = forAllSystems (system: {
-      default = {
-        type = "app";
-        program = "${self.packages.${system}.default}/bin/day-solution";
-      };
-    });
-
-    devShells = forAllSystems (system: let
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      default = pkgs.mkShell {
-
-        packages = with pkgs; [ 
-          python3 
-          python3Packages.black
-          python3Packages.python-lsp-server
-        ]; 
-      };
-    });
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
+
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+  }:
+    flake-utils.lib.eachDefaultSystem (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        packages.default = pkgs.writeShellScriptBin "day01" ''
+          ${pkgs.python3}/bin/python3 ${./main.py} "$@"
+        '';
+
+        apps.default = flake-utils.lib.mkApp {
+          drv = self.packages.${system}.default;
+        };
+
+        devShells.default = pkgs.mkShell {
+          packages = with pkgs; [
+            nil
+            alejandra
+            python3
+            python3Packages.black
+            python3Packages.python-lsp-server
+          ];
+        };
+      }
+    );
 }
