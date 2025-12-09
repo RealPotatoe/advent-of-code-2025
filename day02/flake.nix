@@ -29,6 +29,8 @@
 
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
+            nil
+            alejandra
             go
             gopls
             gotools
