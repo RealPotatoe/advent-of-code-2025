@@ -141,13 +141,13 @@ create swap-temp 2 cells allot
     parse-ranges
     merge-overlapping-ranges
 
-    ." === Day05 ===" cr
+    ." === Day 05 ===" cr
     
     count-fresh-ingredients
-    ." Part 1 (Valid Inputs): " . cr
+    ." Part 1: " . cr
 
     count-available-ids
-    ." Part 2 (Total Covered): " . cr
+    ." Part 2: " . cr
 ;
 
 main

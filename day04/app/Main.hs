@@ -43,7 +43,7 @@ main = do
   rawInput <- getContents
   let allRolls = parseInput (lines rawInput)
 
-  putStrLn "--- Day 4 Solutions ---"
+  putStrLn "=== Day 04 ==="
 
   putStr "Part 1: "
   print (solvePart1 allRolls)
