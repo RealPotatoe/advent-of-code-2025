@@ -19,6 +19,9 @@
 
     day05.url = "path:./day05";
     day05.inputs.nixpkgs.follows = "nixpkgs";
+
+    day06.url = "path:./day06";
+    day06.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -37,6 +40,7 @@
           day03 = inputs.day03.apps.${system}.default;
           day04 = inputs.day04.apps.${system}.default;
           day05 = inputs.day05.apps.${system}.default;
+          day06 = inputs.day06.apps.${system}.default;
         };
 
         devShells.default = pkgs.mkShell {

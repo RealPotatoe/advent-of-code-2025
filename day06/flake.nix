@@ -16,7 +16,12 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in {
         packages.default = pkgs.writeShellScriptBin "day06" ''
-          ${pkgs.kotlin}/bin/kotlin ${./main.kt}
+          export PATH="${pkgs.lib.makeBinPath [pkgs.kotlin pkgs.jdk pkgs.gnumake]}:$PATH"
+          if [ -d "day06" ]; then
+            cd day06
+          fi
+          trap "make clean" EXIT
+          make run "$@"
         '';
 
         apps.default = flake-utils.lib.mkApp {
